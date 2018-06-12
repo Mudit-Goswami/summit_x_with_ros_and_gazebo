@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package>
+  <name>summit_x_common</name>
+  <version>0.0.4</version>
+  <description>The summit_x_common package</description>
+
+  <maintainer email="rnavarro@robotnik.es">Román Navarro</maintainer>
+  <maintainer email="rguzman@robotnik.es">Roberto Guzmán</maintainer>
+  <maintainer email="cvillar@robotnik.es">Carlos Villar</maintainer>
+
+
+  <license>BSD</license>
+
+
+  <url type="website">https://github.com/RobotnikAutomation/summit_x_common</url> 
+  <url type="repository">https://github.com/RobotnikAutomation/summit_x_common</url>
+  <url type="bugtracker">https://github.com/RobotnikAutomation/summit_x_common/issues</url>
+
+  <author email="rguzman@robotnik.es">Roberto Guzman</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>summit_x_description</run_depend>
+
+  <export>
+    <metapackage />
+  </export>
+  
+</package>
