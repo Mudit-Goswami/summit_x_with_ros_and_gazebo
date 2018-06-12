@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- start gazebo simulation -->
+  <include file="$(find summit_xl_gazebo)/launch/summit_xl.launch"/>
+
+  <!-- robot_localization nodes, publishes transformation world->odom->base_footprint -->
+  <include file="$(find summit_xl_localization)/launch/robot_localization_complete.launch"/>
+  
+</launch>
