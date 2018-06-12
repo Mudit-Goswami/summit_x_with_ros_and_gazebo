@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+  <rosparam command="load" file="$(find summit_x_bringup_150603a)/config/summit_x_controller.yaml" />
+
+  <!-- Define if XWAM configuration or standard XL -->
+  <param name="xwam" type="string" value="true"/>
+
+
+  <!-- start summit_xl_controller node -->
+  <node pkg="summit_xl_controller" type="summit_xl_controller" name="summit_xl_controller" output="screen">
+       <!-- param name="publish_odom_tf" type="string" value="false"/ -->
+       <param name="publish_odom_tf" value="false"/>
+       <param name="port" value="/dev/pcan32"/>
+       <remap from="/summit_xl_controller/command" to="/summit_xl_control/cmd_vel"/>
+  </node>
+
+  <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+    <rosparam command="load" file="$(find summit_x_bringup_150603a)/config/twist_mux.yaml" />
+    <remap from="cmd_vel_out" to="/summit_xl_control/cmd_vel"/>
+  </node>
+
+
+</launch>
