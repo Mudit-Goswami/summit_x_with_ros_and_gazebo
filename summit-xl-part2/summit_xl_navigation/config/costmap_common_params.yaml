@@ -1,0 +1,39 @@
+obstacle_range: 2.5
+raytrace_range: 3.0
+
+footprint: [[0.35, -0.3], [0.35, 0.3], [-0.35,0.3], [-0.35, -0.3]]
+
+publish_frequency: 1.0
+
+map_type: voxel
+
+inflation_layer:
+  inflation_radius: 0.5
+
+obstacle_layer:
+  enabled:              true
+  max_obstacle_height:  0.6
+  origin_z:             0.0
+  z_resolution:         0.2
+  z_voxels:             2
+  unknown_threshold:    15
+  mark_threshold:       0
+  combination_method:   1
+  track_unknown_space:  true    #true needed for disabling global path planning through unknown space
+  obstacle_range: 2.5
+  raytrace_range: 3.0
+  origin_z: 0.0
+  z_resolution: 0.2
+  z_voxels: 2
+  publish_voxel_map: false
+  observation_sources: hokuyo_laser base_laser_front
+  hokuyo_laser: {sensor_frame: hokuyo_base_laser_link, data_type: LaserScan, topic: hokuyo_base/scan, marking: true, clearing: true}
+  base_laser_front: {sensor_frame: laser_front_link, data_type: LaserScan, topic: laser_front/scan, marking: true, clearing: true}
+
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  5.0  # exponential rate at which the obstacle cost drops off (default: 10)
+  inflation_radius:     0.5  # max. distance from an obstacle at which costs are incurred for planning paths.
+
+static_layer:
+  enabled:              true
