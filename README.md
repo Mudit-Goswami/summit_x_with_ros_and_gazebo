@@ -1,4 +1,4 @@
-# summit_x_with_ros_and_gazebo
+# Summit_X_with_ROS_and_Gazebo
 ROS-based Autonomous Navigation and SLAM for a Summit-X Robot in a Gazebo simulated environment using 3D sensor information.
 
 These are the ROS packages from the Robotnik Automation and I have used them and made some changes to these files according to my use.
